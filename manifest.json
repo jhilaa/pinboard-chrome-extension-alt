@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Pseudo Popup draggable alt",
+  "version": "0.1",
+  "description": "Creates a pseudo popup on the page with drag and close functionality.",
+  "permissions": ["storage",
+    "activeTab",
+    "background",
+	"scripting"],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "pin16.png",
+      "48": "pin48.png",
+      "128": "pin128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+      "16": "run16.png",
+      "48": "run48.png",
+      "128": "run128.png"
+  }
+}
+
